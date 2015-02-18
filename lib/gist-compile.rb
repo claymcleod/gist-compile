@@ -43,7 +43,7 @@ def load_gists(gist_url)
   end
 
   thread_arr.each{ |t| t.join() }
-  File.open("./temp.json","w") do |f|
+  File.open("./gists.json","w") do |f|
     pretty_string = JSON.pretty_generate(metadata).sub('[','{').sub(']','}')
     f.write(pretty_string)
   end
