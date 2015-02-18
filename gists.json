@@ -1,0 +1,38 @@
+{
+  {
+    "Title": " Travelling Salesman",
+    "Authors": " Clay McLeod",
+    "Description": " Solution to the travelling salesman problem using simulated annealing in the MATLAB programming language",
+    "Section": " MATLAB",
+    "Subsection": " General",
+    "URL": "https://gist.github.com/claymcleod/6a6f7656d06f887ae046/",
+    "URL_RAW": "https://gist.githubusercontent.com/claymcleod/6a6f7656d06f887ae046/raw"
+  },
+  {
+    "Title": " Problem 3",
+    "Authors": " Clay McLeod",
+    "Section": " Python",
+    "Subsection": " Problem Sets",
+    "Description": null,
+    "URL": "https://gist.github.com/claymcleod/8db5cd9070c83c27524d/",
+    "URL_RAW": "https://gist.githubusercontent.com/claymcleod/8db5cd9070c83c27524d/raw"
+  },
+  {
+    "Title": " Simple Ruby Datamining Example",
+    "Authors": " Clay McLeod",
+    "Description": " La tee da",
+    "Section": " Learning Ruby",
+    "Subsection": " Simple Examples",
+    "URL": "https://gist.github.com/claymcleod/b3adc0a5ca47b716dd6b/",
+    "URL_RAW": "https://gist.githubusercontent.com/claymcleod/b3adc0a5ca47b716dd6b/raw"
+  },
+  {
+    "Title": " Edit Distance",
+    "Authors": " Clay McLeod",
+    "Description": " Python edit distance problem",
+    "Section": " Python",
+    "Subsection": " Simple Examples",
+    "URL": "https://gist.github.com/claymcleod/f9ce092cfed501408ee6/",
+    "URL_RAW": "https://gist.githubusercontent.com/claymcleod/f9ce092cfed501408ee6/raw"
+  }
+}
