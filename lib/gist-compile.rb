@@ -1,5 +1,7 @@
+# coding: utf-8
 require "uri"
 require "json"
+require "paint"
 require "rubygems"
 require "nokogiri"
 require "rest-client"
@@ -22,21 +24,29 @@ def load_gists(gist_url)
   gists_data = Hash.new
   
   raw_html = Nokogiri::HTML(RestClient.get(gist_url))
-  raw_html.css(GIST_XPATH_IDENTIFIER).each do |element|
+  elements = raw_html.css(GIST_XPATH_IDENTIFIER)
+
+  puts "Processing #{elements.length} gists..."
+
+  elements.each do |element|
     thread_arr.push(
       Thread.new {
-        individual_gist_url = URI::join(GIST_USERCONTENT_BASE_URL, element['href']+'/', 'raw').to_s
-        individual_gist_html = Nokogiri::HTML(RestClient.get(individual_gist_url))
+        individual_gist_url = URI::join(GIST_BASE_URL, element['href']+'/').to_s
+        individual_gist_url_raw = URI::join(GIST_USERCONTENT_BASE_URL, element['href']+'/', 'raw').to_s
+        individual_gist_html = Nokogiri::HTML(RestClient.get(individual_gist_url_raw))
         metadata_for_gist = process_raw_gist(individual_gist_html.xpath("//*/body/p")[0].text)
         if metadata_for_gist != nil && !metadata_for_gist.empty?
+          puts "    • #{individual_gist_url}: " + Paint["[", :yellow] + Paint["OK", :green] + Paint["]",:yellow]
           GIST_METADATA_HOOKS.each do |key, value|
             if !metadata_for_gist.key? key
               metadata_for_gist[key] = nil
             end
           end
-          metadata_for_gist["URL"] = URI::join(GIST_BASE_URL, element['href']+'/').to_s
-          metadata_for_gist["URL_RAW"] = individual_gist_url
+          metadata_for_gist["URL"] = individual_gist_url
+          metadata_for_gist["URL_RAW"] = individual_gist_url_raw
           metadata.push(metadata_for_gist)
+        else
+          puts "    • #{individual_gist_url}: " + Paint["[", :yellow] + Paint["ERR", :red] + Paint["]",:yellow]
         end
       }
     )
