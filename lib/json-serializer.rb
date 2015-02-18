@@ -36,7 +36,7 @@ class JSONSerializer
 
   def to_md
     structured_gists = compile()
-    File.open("./gists.md","w") do |f|
+    File.open("./prod/gists.md","w") do |f|
       structured_gists.each do |j, v|
         f.puts("# #{j}\r")
         structured_gists[j].each do |k, v|
