@@ -6,8 +6,7 @@ Gem::Specification.new do |s|
   s.description = ""
   s.authors     = ["Clay McLeod"]
   s.email       = 'clay.l.mcleod@gmail.com'
-  s.files       = ["lib/gist-compile.rb"]
-  s.homepage    =
-    'http://github.com/claymcleod/gist-compile'
-  s.license       = 'MIT'
+  s.files       = ["lib/gist-compile"]
+  s.homepage    = 'http://github.com/claymcleod/gist-compile'
+  s.license     = 'MIT'
 end
