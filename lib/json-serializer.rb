@@ -48,7 +48,6 @@ class JSONSerializer
             f.puts("* URL: #{u}\r")
             f.puts("\r\n")
           end
-          f.puts("\r\n")
         end
       end
       f.close()
