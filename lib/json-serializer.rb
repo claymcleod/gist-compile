@@ -12,12 +12,12 @@ class JSONSerializer
 
     entries = JSON.parse(json)
     entries.each do |arr|
-      title = arr["Title"]
-      authors = arr["Authors"]
-      description = arr["Description"]
-      section = arr["Section"]
-      subsection = arr["Subsection"]
-      url = arr["URL"]
+      title = arr["Title"] != nil ? arr["Title"].strip() : nil
+      authors = arr["Authors"] != nil ? arr["Authors"].strip() : nil
+      description = arr["Description"] != nil ? arr["Description"].strip() : nil
+      section = arr["Section"] != nil ? arr["Section"].strip() : nil
+      subsection = arr["Subsection"] != nil ? arr["Subsection"].strip() : nil
+      url = arr["URL"] != nil ? arr["URL"].strip() : nil
       
       if title == nil
         puts "Error: A title must be included for #{url}"
