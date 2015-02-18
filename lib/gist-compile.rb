@@ -85,6 +85,10 @@ class GistCompile
     for index in 0..lines.length-1
       stripped_line = lines[index].strip()
       if stripped_line != nil && !stripped_line.empty?
+        if stripped_line.start_with?("#!")
+          next
+        end
+        
         if comment_char == nil
           comment_char = stripped_line[0]
         end
