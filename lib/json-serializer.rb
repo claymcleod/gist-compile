@@ -39,13 +39,10 @@ class JSONSerializer
     File.open("./gists.md","w") do |f|
       structured_gists.each do |j, v|
         f.puts("# #{j}\r")
-        f.puts("\r\n")
         structured_gists[j].each do |k, v|
-          f.puts("    ## #{k}\r")
-          f.puts("\r\n")
+          f.puts("## #{k}\r")
           structured_gists[j][k].each do |l, v|
-            f.puts("        * #{l}: #{v}\r")
-            f.puts("\r\n")
+            f.puts("* #{l}: #{v}\r")
           end
         end
       end
