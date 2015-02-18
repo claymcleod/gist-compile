@@ -90,7 +90,13 @@ class GistCompile
         end
         
         if comment_char == nil
-          comment_char = stripped_line[0]
+          index = stripped_line.index(GIST_METADATA_HOOKS["Title"])
+          if index == nil
+            return nil
+          else
+            comment_char = stripped_line[0..index-1].strip()
+            puts comment_char
+          end
         end
         if stripped_line.start_with?(comment_char)
           stripped_line = stripped_line.sub(comment_char,'').strip()
