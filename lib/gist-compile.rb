@@ -66,9 +66,10 @@ class GistCompile
     end
     
     thread_arr.each{ |t| t.join() }
-    File.open("./gists.json","w") do |f|
-      pretty_string = JSON.pretty_generate(metadata).sub('[','{').sub(']','}')
+    File.open("../gists.json","w") do |f|
+      pretty_string = JSON.pretty_generate(metadata)
       f.write(pretty_string)
+      f.close()
     end
   end
   
