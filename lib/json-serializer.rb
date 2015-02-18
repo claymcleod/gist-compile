@@ -40,7 +40,7 @@ class JSONSerializer
       structured_gists.each do |j, v|
         f.puts("# #{j}\r")
         structured_gists[j].each do |k, v|
-          f.puts("## #{k}\r")
+          f.puts("### #{k}\r")
           structured_gists[j][k].each do |l, v|
             f.puts("* #{l}: #{v}\r")
           end
