@@ -29,7 +29,7 @@ class JSONSerializer
         next
       end
 
-      structured_gists[section][subsection][url] = {"Title"=>title,"Authors"=>authors, "Description"=>description}
+      structured_gists[section][subsection][title] = {"Authors"=>authors, "Description"=>description, "URL"=>url}
     end
     return structured_gists
   end
@@ -41,11 +41,12 @@ class JSONSerializer
         f.puts("# #{j}\r")
         structured_gists[j].each do |k, v|
           f.puts("### #{k}\r")
-          structured_gists[j][k].each do |u, v|
-            structured_gists[j][k][u].each do |l, v|
-              f.puts("* #{l}: #{v}")
+          f.puts("\r\n")
+          structured_gists[j][k].each do |t, v|
+            f.puts("* Title: #{t}\r")
+            structured_gists[j][k][t].each do |l, v|
+              f.puts("* #{l}: #{v}\r")
             end
-            f.puts("* URL: #{u}\r")
             f.puts("\r\n")
           end
         end
