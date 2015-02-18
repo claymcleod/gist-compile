@@ -43,7 +43,7 @@ class JSONSerializer
           f.puts("### #{k}\r")
           structured_gists[j][k].each do |u, v|
             structured_gists[j][k][u].each do |l, v|
-              f.puts("* #{l}: #{v}\r")
+              f.puts("* #{l}: #{v}")
             end
             f.puts("* URL: #{u}\r")
             f.puts("\r\n")
