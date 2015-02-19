@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# coding: utf-8
 
 require "uri"
 require "json"
@@ -7,6 +8,7 @@ require "paint"
 require "rubygems"
 require "nokogiri"
 require "rest-client"
+require_relative "../lib/json-serializer.rb"
 
 GIST_BASE_URL             = "https://gist.github.com"
 GIST_USERCONTENT_BASE_URL = "https://gist.githubusercontent.com"
@@ -161,7 +163,11 @@ class GistCompile < Thor
     end
     
     load_gists(usernames.split(","))
+    serializer = JSONSerializer.new(File.open("./prod/gists.json","r").read)
+    serializer.to_md
+    serializer.to_html
   end
 end
   
 GistCompile.start(ARGV)
+
