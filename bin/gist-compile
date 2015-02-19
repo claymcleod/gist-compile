@@ -59,7 +59,8 @@ class GistCompile < Thor
             individual_gist_html = Nokogiri::HTML(RestClient.get(individual_gist_url_raw))
             metadata_for_gist = process_raw_gist(individual_gist_html.xpath("//*/body/p")[0].text)
             if metadata_for_gist != nil && !metadata_for_gist.empty?
-              puts "    • #{individual_gist_url}: " + Paint["[", :yellow] + Paint["OK", :green] + Paint["]",:yellow]
+              $stdout.write("    • #{individual_gist_url}: " + Paint["[", :yellow] + Paint["OK", :green] + Paint["]",:yellow]+"\r\n")
+              $stdout.flush
               GIST_METADATA_HOOKS.each do |key, value|
                 if !metadata_for_gist.key? key
                   metadata_for_gist[key] = nil
