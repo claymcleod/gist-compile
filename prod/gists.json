@@ -38,8 +38,8 @@
   {
     "Title": " Simple Ruby Datamining Example",
     "Authors": " Clay McLeod",
-    "Description": " La tee da",
-    "Section": " Learning Ruby",
+    "Description": " Mines data every minute concerning how many people are logged into a certain subreddit.",
+    "Section": " Ruby",
     "Subsection": " Simple Examples",
     "URL": "https://gist.github.com/claymcleod/b3adc0a5ca47b716dd6b/",
     "URL_RAW": "https://gist.githubusercontent.com/claymcleod/b3adc0a5ca47b716dd6b/raw"

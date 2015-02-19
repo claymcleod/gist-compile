@@ -1,11 +1,3 @@
-# Learning Ruby
-### Simple Examples
-
-##### Simple Ruby Datamining Example
-* Authors: Clay McLeod
-* Description: La tee da
-* URL: https://gist.github.com/claymcleod/b3adc0a5ca47b716dd6b/
-
 # MATLAB
 ### General
 
@@ -35,6 +27,14 @@
 ##### Sort nuts and bolts
 * Authors: Clay McLeod
 * URL: https://gist.github.com/claymcleod/8db5cd9070c83c27524d/
+
+# Ruby
+### Simple Examples
+
+##### Simple Ruby Datamining Example
+* Authors: Clay McLeod
+* Description: Mines data every minute concerning how many people are logged into a certain subreddit.
+* URL: https://gist.github.com/claymcleod/b3adc0a5ca47b716dd6b/
 
 # Swift
 ### Variables
