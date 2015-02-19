@@ -45,12 +45,52 @@ class JSONSerializer
           structured_gists[j][k].each do |t, v|
             f.puts("##### #{t}\r")
             structured_gists[j][k][t].each do |l, v|
-              f.puts("* #{l}: #{v}\r")
+              if v != nil
+                f.puts("* #{l}: #{v}\r")
+              end
             end
             f.puts("\r\n")
           end
         end
       end
+      f.close()
+    end
+  end
+
+  def to_html
+    structured_gists = compile()
+    File.open("./prod/gists.html","w") do |f|
+      f.puts("<html>");
+      f.puts("  <body>");
+      structured_gists.each do |j, v|
+        f.puts("    <h1>#{j}</h1>\r")
+        structured_gists[j].each do |k, v|
+          f.puts("      <h2>#{k}</h2>\r")
+          f.puts("\r\n")
+          f.puts("       <ul>\r");
+          structured_gists[j][k].each do |t, v|
+            f.puts("          <li>\n")
+            url= structured_gists[j][k][t]["URL"]
+            if url == nil
+              f.puts("        <h4>#{t}<h4>\r")
+            else
+              f.puts("        <h4><a href=\'#{url}\'>#{t}</a><h4>\r")
+            end
+            f.puts("          <ul>");
+            structured_gists[j][k][t].each do |l, v|
+              if l != "URL" && v != nil
+                f.puts("            <li>#{l}: #{v}</li>\r")
+              end
+            end
+            f.puts("\r\n")
+            f.puts("          </ul>\r")
+            f.puts("          </li>\r")
+          end
+          f.puts("       </ul>\r")
+        end
+      end
+      f.puts("    </body>");
+      f.puts("</html>");
       f.close()
     end
   end
