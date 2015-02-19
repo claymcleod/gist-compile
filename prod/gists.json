@@ -18,6 +18,15 @@
     "URL_RAW": "https://gist.githubusercontent.com/claymcleod/d66f08c06918cee065be/raw"
   },
   {
+    "Title": " Listening for Tap Gestures",
+    "Authors": " Clay McLeod",
+    "Description": " How to handle tap gestures on a view controller.",
+    "Section": " Swift",
+    "Subsection": " Gestures",
+    "URL": "https://gist.github.com/claymcleod/b46a1c84e39cddc868e7/",
+    "URL_RAW": "https://gist.githubusercontent.com/claymcleod/b46a1c84e39cddc868e7/raw"
+  },
+  {
     "Title": " Max subarray",
     "Authors": " Clay McLeod",
     "Description": " Finds the max subarray of an array of integers",

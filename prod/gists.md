@@ -37,6 +37,13 @@
 * URL: https://gist.github.com/claymcleod/b3adc0a5ca47b716dd6b/
 
 # Swift
+### Gestures
+
+##### Listening for Tap Gestures
+* Authors: Clay McLeod
+* Description: How to handle tap gestures on a view controller.
+* URL: https://gist.github.com/claymcleod/b46a1c84e39cddc868e7/
+
 ### Variables
 
 ##### Lazy Initialization of Swift Variables
