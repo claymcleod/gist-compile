@@ -18,11 +18,11 @@
     "URL_RAW": "https://gist.githubusercontent.com/claymcleod/d66f08c06918cee065be/raw"
   },
   {
-    "Title": " Max subarray (Problem 2)",
+    "Title": " Max subarray",
     "Authors": " Clay McLeod",
+    "Description": " Finds the max subarray of an array of integers",
     "Section": " Python",
     "Subsection": " Simple Examples",
-    "Description": null,
     "URL": "https://gist.github.com/claymcleod/26e2f380f4dda468fd56/",
     "URL_RAW": "https://gist.githubusercontent.com/claymcleod/26e2f380f4dda468fd56/raw"
   },
@@ -36,15 +36,6 @@
     "URL_RAW": "https://gist.githubusercontent.com/claymcleod/1613590bbfc8203c0797/raw"
   },
   {
-    "Title": " SandwichDSL",
-    "Authors": " Clay McLeod",
-    "Section": " Haskell",
-    "Subsection": " Assignments",
-    "Description": null,
-    "URL": "https://gist.github.com/claymcleod/904d7efaaeaa9a88e406/",
-    "URL_RAW": "https://gist.githubusercontent.com/claymcleod/904d7efaaeaa9a88e406/raw"
-  },
-  {
     "Title": " Simple Ruby Datamining Example",
     "Authors": " Clay McLeod",
     "Description": " La tee da",
@@ -54,7 +45,7 @@
     "URL_RAW": "https://gist.githubusercontent.com/claymcleod/b3adc0a5ca47b716dd6b/raw"
   },
   {
-    "Title": " Sort nuts and bolts (Problem 3)",
+    "Title": " Sort nuts and bolts",
     "Authors": " Clay McLeod",
     "Section": " Python",
     "Subsection": " Simple Examples",
