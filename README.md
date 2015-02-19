@@ -3,7 +3,7 @@
 gist-compile is a tool I created to index your Github Gists. Currently, the two supported outputs are Markdown and HTML. The usage is simple:
 
 1. Clone the repo
-2. Change the gist-compile directory ```cd <gist-compile folder location```
+2. Change the gist-compile directory ```cd <gist-compile folder location>```
 3. Make the binary executable ```chmod +x bin/gist-compile```
 4. Start gist-compile! ```bin/gist-compile start -u "claymcleod"```
 
