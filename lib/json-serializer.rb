@@ -78,9 +78,7 @@ class JSONSerializer
         structured_gists[j].each do |k, v|
           f.puts("      <h2>#{k}</h2>\r")
           f.puts("\r\n")
-          f.puts("       <ul>\r");
           structured_gists[j][k].each do |t, v|
-            f.puts("          <li>\n")
             url= structured_gists[j][k][t]["URL"]
             if url == nil
               f.puts("        <h3>#{t}</h3>\r")
@@ -95,9 +93,7 @@ class JSONSerializer
             end
             f.puts("\r\n")
             f.puts("          </ul>\r")
-            f.puts("          </li>\r")
           end
-          f.puts("       </ul>\r")
         end
       end
       f.puts("    </body>");
