@@ -80,14 +80,14 @@ class JSONSerializer
             f.puts("          <li>\n")
             url= structured_gists[j][k][t]["URL"]
             if url == nil
-              f.puts("        <h4>#{t}<h4>\r")
+              f.puts("        <h3>#{t}</h3>\r")
             else
-              f.puts("        <h4><a href=\'#{url}\'>#{t}</a><h4>\r")
+              f.puts("        <h3><a href=\'#{url}\'>#{t}</a></h3>")
             end
             f.puts("          <ul>");
             structured_gists[j][k][t].each do |l, v|
               if l != "URL" && v != nil
-                f.puts("            <li>#{l}: #{v}</li>\r")
+                f.puts("          <li>#{l}: #{v}</li>\r")
               end
             end
             f.puts("\r\n")
