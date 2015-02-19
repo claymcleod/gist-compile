@@ -1,3 +1,26 @@
+# Haskell
+### Assignments
+
+##### SandwichDSL
+* Authors: Clay McLeod
+* URL: https://gist.github.com/claymcleod/904d7efaaeaa9a88e406/
+
+# Learning Ruby
+### Simple Examples
+
+##### Simple Ruby Datamining Example
+* Authors: Clay McLeod
+* Description: La tee da
+* URL: https://gist.github.com/claymcleod/b3adc0a5ca47b716dd6b/
+
+# MATLAB
+### General
+
+##### Travelling Salesman
+* Authors: Clay McLeod
+* Description: Solution to the travelling salesman problem using simulated annealing in the MATLAB programming language
+* URL: https://gist.github.com/claymcleod/6a6f7656d06f887ae046/
+
 # Python
 ### Simple Examples
 
@@ -26,27 +49,4 @@
 * Authors: Clay McLeod
 * Description: An example of how to create a variable using lazy initialization in the Swift programming language.
 * URL: https://gist.github.com/claymcleod/d66f08c06918cee065be/
-
-# Haskell
-### Assignments
-
-##### SandwichDSL
-* Authors: Clay McLeod
-* URL: https://gist.github.com/claymcleod/904d7efaaeaa9a88e406/
-
-# Learning Ruby
-### Simple Examples
-
-##### Simple Ruby Datamining Example
-* Authors: Clay McLeod
-* Description: La tee da
-* URL: https://gist.github.com/claymcleod/b3adc0a5ca47b716dd6b/
-
-# MATLAB
-### General
-
-##### Travelling Salesman
-* Authors: Clay McLeod
-* Description: Solution to the travelling salesman problem using simulated annealing in the MATLAB programming language
-* URL: https://gist.github.com/claymcleod/6a6f7656d06f887ae046/
 

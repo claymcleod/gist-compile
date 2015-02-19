@@ -31,6 +31,14 @@ class JSONSerializer
 
       structured_gists[section][subsection][title] = {"Authors"=>authors, "Description"=>description, "URL"=>url}
     end
+    structured_gists = structured_gists.sort.to_h
+    structured_gists.keys.each do |k|
+      structured_gists[k] = structured_gists[k].sort.to_h
+      structured_gists[k].keys.each do |l|
+        structured_gists[k][l] = structured_gists[k][l].sort.to_h
+      end
+    end
+    
     return structured_gists
   end
 
