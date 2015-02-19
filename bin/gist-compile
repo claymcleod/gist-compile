@@ -76,8 +76,9 @@ class GistCompile < Thor
       end
       
       thread_arr.each{ |t| t.join() }
+
       File.open("./prod/gists.json","w") do |f|
-        pretty_string = JSON.pretty_generate(metadata)
+        pretty_string = JSON.pretty_generate(metadata.sort_by {|item| item["Title"]})
         f.write(pretty_string)
         f.close()
       end
