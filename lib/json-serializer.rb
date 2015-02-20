@@ -2,9 +2,11 @@ require 'json'
 
 class JSONSerializer
   attr_accessor :json
+  attr_accessor :linkauthor
   
-  def initialize(json)
+  def initialize(json, linkauthor)
     @json = json
+    @linkauthor = linkauthor
   end
 
   def compile
@@ -93,7 +95,7 @@ class JSONSerializer
             f.puts("          <ul>");
             structured_gists[j][k][t].each do |l, v|
               if l != "URL" && l != "URL_USER" && v != nil
-                if l == "Authors"
+                if linkauthor && l == "Authors"
                   f.puts("          <li>#{l}: <a href=\"http://#{structured_gists[j][k][t]["URL_USER"]}\">#{v}</a></li>\r")
                 else
                   f.puts("          <li>#{l}: #{v}</li>\r")

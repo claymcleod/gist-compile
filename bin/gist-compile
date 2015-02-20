@@ -158,15 +158,18 @@ class GistCompile < Thor
   
   desc "start", "Run the gist-compile"
   method_option :username, :aliases => "-u", :desc => "username(s) to run with, seperated by comma: \"claymcleod, othername\""
+  method_option :linkauthor, :aliases => "--link-author", :desc => "When serializing in HTML, the authors page will be linked", :default => false
   def start
     usernames = options[:username]
+    linkauthor = options[:linkauthor]
+
     if usernames == nil
       puts "You must specify a username! (eg. -u \"claymcleod\")"
       return
     end
     
     load_gists(usernames.split(","))
-    serializer = JSONSerializer.new(File.open("./prod/gists.json","r").read)
+    serializer = JSONSerializer.new(File.open("./prod/gists.json","r").read, linkauthor)
     serializer.to_md
     serializer.to_html
   end
