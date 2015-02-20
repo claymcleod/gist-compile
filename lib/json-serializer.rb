@@ -92,7 +92,7 @@ class JSONSerializer
             end
             f.puts("          <ul>");
             structured_gists[j][k][t].each do |l, v|
-              if l != "URL" && l != "USER_URL" && v != nil
+              if l != "URL" && l != "URL_USER" && v != nil
                 if l == "Authors"
                   f.puts("          <li>#{l}: <a href=\"http://#{structured_gists[j][k][t]["URL_USER"]}\">#{v}</a></li>\r")
                 else
