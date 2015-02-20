@@ -68,6 +68,7 @@ class GistCompile < Thor
               end
               metadata_for_gist["URL"] = individual_gist_url
               metadata_for_gist["URL_RAW"] = individual_gist_url_raw
+              metadata_for_gist["URL_USER"] = /github.com\/[A-Za-z0-9]*/.match(individual_gist_url)
               metadata.push(metadata_for_gist)
             else
               puts "    • #{individual_gist_url}: " + Paint["[", :yellow] + Paint["ERR", :red] + Paint["]",:yellow]

@@ -18,7 +18,8 @@ class JSONSerializer
       section = arr["Section"] != nil ? arr["Section"].strip() : nil
       subsection = arr["Subsection"] != nil ? arr["Subsection"].strip() : nil
       url = arr["URL"] != nil ? arr["URL"].strip() : nil
-      
+      url_user = arr["URL_USER"] != nil ? arr["URL_USER"].strip() : nil
+
       if title == nil
         puts "Error: A title must be included for #{url}"
         next
@@ -29,7 +30,8 @@ class JSONSerializer
         next
       end
 
-      structured_gists[section][subsection][title] = {"Authors"=>authors, "Description"=>description, "URL"=>url}
+      structured_gists[section][subsection][title] = {"Authors"=>authors, "Description"=>description,
+                                                      "URL"=>url, "URL_USER"=>url_user}
     end
     structured_gists = structured_gists.sort.to_h
     structured_gists.keys.each do |k|
@@ -90,8 +92,16 @@ class JSONSerializer
             end
             f.puts("          <ul>");
             structured_gists[j][k][t].each do |l, v|
-              if l != "URL" && v != nil
+              if l != "URL" && l != "USER_URL" && v != nil
+                if l == "Authors"
+                  f.puts("          <a href=\"#{structured_gists[j][k][t]["URL_USER"]}\">\r")
+                end
+
                 f.puts("          <li>#{l}: #{v}</li>\r")
+                if l =="Authors"
+                  f.puts("          </a>\r")
+                end
+                
               end
             end
             f.puts("\r\n")
