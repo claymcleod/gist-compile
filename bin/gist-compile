@@ -7,21 +7,28 @@ require "thor"
 require "paint"
 require "rubygems"
 require "nokogiri"
+require "fileutils"
 require "rest-client"
-require_relative "../lib/json-serializer.rb"
-
-GIST_BASE_URL             = "https://gist.github.com"
-GIST_USERCONTENT_BASE_URL = "https://gist.githubusercontent.com"
-GIST_XPATH_IDENTIFIER     = "//*[@id=\"js-flash-container\"]/div/div/div/div/div/span/a[3]"
-
-GIST_METADATA_HOOKS = Hash.new
-GIST_METADATA_HOOKS["Title"] = "Title:"
-GIST_METADATA_HOOKS["Authors"] = "Authors:"
-GIST_METADATA_HOOKS["Description"] = "Description:"
-GIST_METADATA_HOOKS["Section"] = "Section:"
-GIST_METADATA_HOOKS["Subsection"] = "Subsection:"
+require "json-serializer"
 
 class GistCompile < Thor
+
+  GIST_JSON_LOC = "./gc_products/gists.json"
+  GIST_MD_LOC ="./gc_products/gists.md"
+  GIST_HTML_LOC ="./gc_products/gists.html"
+  GIST_PROD_DIR = File.expand_path("../.", GIST_JSON_LOC)
+
+  GIST_BASE_URL             = "https://gist.github.com"
+  GIST_USERCONTENT_BASE_URL = "https://gist.githubusercontent.com"
+  GIST_XPATH_IDENTIFIER     = "//*[@id=\"js-flash-container\"]/div/div/div/div/div/span/a[3]"
+
+  GIST_METADATA_HOOKS = Hash.new
+  GIST_METADATA_HOOKS["Title"] = "Title:"
+  GIST_METADATA_HOOKS["Authors"] = "Authors:"
+  GIST_METADATA_HOOKS["Description"] = "Description:"
+  GIST_METADATA_HOOKS["Section"] = "Section:"
+  GIST_METADATA_HOOKS["Subsection"] = "Subsection:"
+  
   no_commands do
     def load_gists(usernames)
       thread_arr = []
@@ -79,7 +86,9 @@ class GistCompile < Thor
       
       thread_arr.each{ |t| t.join() }
 
-      File.open("./prod/gists.json","w") do |f|
+      FileUtils::mkdir_p GIST_PROD_DIR
+      
+      File.open(GIST_JSON_LOC,"w") do |f|
         pretty_string = JSON.pretty_generate(metadata.sort_by {|item| item["Title"]})
         f.write(pretty_string)
         f.close()
@@ -169,9 +178,9 @@ class GistCompile < Thor
     end
     
     load_gists(usernames.split(","))
-    serializer = JSONSerializer.new(File.open("./prod/gists.json","r").read, linkauthor)
-    serializer.to_md
-    serializer.to_html
+    serializer = JSONSerializer.new(File.open(GIST_JSON_LOC,"r").read, linkauthor)
+    serializer.to_md(GIST_MD_LOC)
+    serializer.to_html(GIST_HTML_LOC)
   end
 end
   

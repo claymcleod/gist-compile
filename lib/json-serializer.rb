@@ -46,9 +46,9 @@ class JSONSerializer
     return structured_gists
   end
 
-  def to_md
+  def to_md(file)
     structured_gists = compile()
-    File.open("./prod/gists.md","w") do |f|
+    File.open(file,"w") do |f|
       structured_gists.each do |j, v|
         f.puts("# #{j}\r")
         structured_gists[j].each do |k, v|
@@ -69,9 +69,9 @@ class JSONSerializer
     end
   end
 
-  def to_html
+  def to_html(file)
     structured_gists = compile()
-    File.open("./prod/gists.html","w") do |f|
+    File.open(file,"w") do |f|
       f.puts("<!DOCTYPE HTML>")
       f.puts("<html>")
       f.puts("  <head>\n    <meta charset=\"UTF-8\">\n  </head>");

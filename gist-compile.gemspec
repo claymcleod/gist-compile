@@ -1,12 +1,14 @@
 Gem::Specification.new do |s|
   s.name        = 'gist-compile'
-  s.version     = '0.0.1'
-  s.date        = '2015-02-17'
+  s.version     = '0.0.4'
+  s.date        = '2015-02-22'
   s.summary     = "Gist-compile will compile Github gists into an intelligible, book like, form."
   s.description = ""
   s.authors     = ["Clay McLeod"]
   s.email       = 'clay.l.mcleod@gmail.com'
-  s.files       = ["lib/json-serializer.rb", "bin/gist-compile"]
+  s.files       = `git ls-files`.split($\)
+  s.executables = ['gist-compile']
+  s.require_paths = ["lib"]                                     
   s.homepage    = 'http://github.com/claymcleod/gist-compile'
   s.license     = 'MIT'
   s.add_runtime_dependency 'thor', '~> 0.19.1', '>= 0.19.1'
