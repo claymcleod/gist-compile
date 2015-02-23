@@ -6,7 +6,8 @@ gist-compile is a tool I created to index your Github Gists. Currently, the two 
 
 ## Downloading using Rubygems
 
-Type```gem install gist-compile``` into your command line of choice (with rubygems installed!).
+1. Type```gem install gist-compile``` into your command line.
+2. Start gist-compile! ```gist-compile start -u "claymcleod"```
 
 ## Downloading manually
 
