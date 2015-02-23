@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/claymcleod/gist-compile](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/claymcleod/gist-compile?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Gem Version](https://badge.fury.io/rb/gist-compile.svg)](http://badge.fury.io/rb/gist-compile)
 
-"gist-compile" is a tool I created to index your Github Gists (and the backend to a website I created, called [Gnippets](http://gnippets.com). Currently, the two supported outputs are Markdown and HTML. The usage is simple:
+"gist-compile" is a tool I created to index your Github Gists (and the backend to a website I created, called [Gnippets](http://gnippets.com). Currently, the supported outputs are JSON, Markdown, and HTML. [View the results here](https://github.com/claymcleod/gist-compile/tree/master/gc_products). The usage is simple:
 
 ## Downloading using Rubygems
 
@@ -38,5 +38,3 @@ A few rules:
 2. You must format your comment using single line comment character (multi-line comments not supported!)
 3. You must include a section and a subsection.
 
-
-[View the results here](https://github.com/claymcleod/gist-compile/tree/master/gc_products).
