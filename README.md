@@ -39,4 +39,4 @@ A few rules:
 3. You must include a section and a subsection.
 
 
-[View the results here](https://github.com/claymcleod/gist-compile/tree/master/prod).
+[View the results here](https://github.com/claymcleod/gist-compile/tree/master/gc_products).
