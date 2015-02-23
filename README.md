@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/claymcleod/gist-compile](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/claymcleod/gist-compile?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-gist-compile is a tool I created to index your Github Gists. Currently, the two supported outputs are Markdown and HTML. The usage is simple:
+"gist-compile" is a tool I created to index your Github Gists (and the backend to a website I created, called [Gnippets](http://gnippets.com). Currently, the two supported outputs are Markdown and HTML. The usage is simple:
 
 ## Downloading using Rubygems
 
