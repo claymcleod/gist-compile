@@ -4,6 +4,12 @@
 
 gist-compile is a tool I created to index your Github Gists. Currently, the two supported outputs are Markdown and HTML. The usage is simple:
 
+## Downloading using Rubygems
+
+Simply type ```gem install gist-compile``` into your command line of choice (with rubygems installed!).
+
+## Downloading manually
+
 1. Clone the repo
 2. Change the gist-compile directory ```cd <gist-compile folder location>```
 3. Make the binary executable ```chmod +x bin/gist-compile```
