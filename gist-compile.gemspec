@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'gist-compile'
-  s.version     = '1.0.0'
+  s.version     = '1.0.1'
   s.date        = '2015-02-22'
   s.summary     = "Gist-compile will compile Github gists into an intelligible, book like, form."
   s.description = ""

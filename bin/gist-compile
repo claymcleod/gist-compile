@@ -38,21 +38,32 @@ class GistCompile < Thor
       username_urls = []
 
       usernames.each do |u|
-        username_urls.push(URI::join(GIST_BASE_URL+'/', u.strip()).to_s)
+        begin
+          username_urls.push(URI::join(GIST_BASE_URL+'/', u.strip()).to_s)
+        rescue => e
+          puts "Uh oh! Could not find user with name: "+u.strip()
+        end
       end
 
       username_urls.each do |username_url|
         page = 1
         while page < 1000
-          gist_url_current_page = URI::join(username_url+'/', "?page=#{page}").to_s
-          raw_html = Nokogiri::HTML(RestClient.get(gist_url_current_page))
-          new_elements = raw_html.css(GIST_XPATH_IDENTIFIER)
-          if new_elements.length == 0
+          begin
+            gist_url_current_page = URI::join(username_url+'/', "?page=#{page}").to_s
+            raw_html = Nokogiri::HTML(RestClient.get(gist_url_current_page))
+            new_elements = raw_html.css(GIST_XPATH_IDENTIFIER)
+            if new_elements.length == 0
+              break
+            else
+              elements.concat(new_elements)
+            end
+            page = page + 1
+          rescue => e
+            if page == 1
+              puts "Error loading user: "+username_url.sub(GIST_BASE_URL, '').sub('/','')
+            end
             break
-          else
-            elements.concat(new_elements)
           end
-          page = page + 1
         end
       end
       
