@@ -38,7 +38,3 @@ A few rules:
 2. You must format your comment using single line comment character (multi-line comments not supported!)
 3. You must include a section and a subsection.
 
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/claymcleod/gist-compile/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
